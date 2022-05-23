@@ -1,0 +1,11 @@
+Fonctions
+    - Se connecter
+    - Passer une commande
+        - Ajouter un produit a la liste card
+    - Suivre sa commande
+    - Faire des  commmentaires
+    
+Client
+[x] Creer un client
+[x] Coder la navBar
+[]
