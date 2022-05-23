@@ -1,0 +1,248 @@
+
+// Global Style
+* {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Hide
+.hide {
+    display: none;
+}
+
+// cursor
+.pointer {
+    cursor: pointer;
+}
+
+.shadow {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.22);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 10vh;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+// Colors
+$colors: (
+    "primary": #1ECBE1,
+    "primary-light": #4BD5E7,
+    "secondary": #E1341E,
+    "secondary-light": #E75D4B,
+    "white": #fff,
+    "lwhite": #E6E6E6,
+    "dark": #000,
+    "ldark":#1A1A1A
+);
+
+@each $key, $color in $colors {
+    .bg-#{$key} {
+        background-color: $color;
+    }
+
+    .text-#{$key} {
+        color: $color
+    }
+
+    .border-#{$key} {
+        border-color: $color
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-none {
+    text-decoration: none;
+}
+
+@for $i from 0 to 101 {
+    .w-#{$i} {
+        width: $i * 1%;
+    }
+}
+// Margin and Padding
+
+@for $i from 0 to 31 {
+    .m-#{$i} {
+        margin: $i * 2px;
+    }
+
+    .ml-#{$i} {
+        margin-left: $i * 2px;
+    }
+
+    .mr-#{$i} {
+        margin-right: $i * 2px;
+    }
+
+    .mt-#{$i} {
+        margin-top: $i * 2px;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: $i * 2px;
+    }
+
+    .mx-#{$i} {
+        margin-left: $i * 2px;
+        margin-right: $i * 2px;
+    }
+
+    .my-#{$i} {
+        margin-top: $i * 2px;
+        margin-bottom: $i * 2px;
+    }
+
+    .p-#{$i} {
+        padding: $i * 2px;
+    }
+
+    .pl-#{$i} {
+        padding-left: $i * 2px;
+    }
+
+    .pr-#{$i} {
+        padding-right: $i * 2px;
+    }
+
+    .pt-#{$i} {
+        padding-top: $i * 2px;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: $i * 2px;
+    }
+
+    .px-#{$i} {
+        padding-left: $i * 2px;
+        padding-right: $i * 2px;
+    }
+
+    .py-#{$i} {
+        padding-top: $i * 2px;
+        padding-bottom: $i * 2px;
+    }
+}
+
+// 
+// FONT-SISZES
+@mixin generate-font-size($val) {
+    .fs-#{$val} {
+        font-size: calc($val / 2.8) + em;
+        line-height: 1.4;
+    }
+}
+
+@include generate-font-size(1);
+@include generate-font-size(2);
+@include generate-font-size(3);
+@include generate-font-size(4);
+@include generate-font-size(5);
+@include generate-font-size(6);
+@include generate-font-size(7);
+@include generate-font-size(8);
+@include generate-font-size(9);
+@include generate-font-size(10);
+@include generate-font-size(11);
+@include generate-font-size(12);
+
+.semi-bold {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ccc;
+}
+// BORDER_RADIUS
+@mixin generate-border-radius($val) {
+    .radius-#{$val} {
+        border-radius: $val + px;
+    }
+}
+
+@include generate-border-radius(6);
+@include generate-border-radius(8);
+
+.radius-full {
+    border-radius: 50%;
+}
+
+.top-radius {
+    border-radius: 24px 24px 0 0;
+}
+
+// Layout
+.fixed {
+    position: fixed;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+// Flex
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+@for $i from 0 to 20 {
+    .gap-#{$i} {
+        gap: $i * 2px;
+    }
+}
+
+$positions: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around);
+
+@each $key,
+$val in $positions {
+    .justify-#{$key} {
+        justify-content: $val;
+    }
+
+    .items-#{$key} {
+        align-items: $val;
+    }
+
+    .content {
+        align-content: $val;
+    }
+}
